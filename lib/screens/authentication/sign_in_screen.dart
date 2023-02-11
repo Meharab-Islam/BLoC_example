@@ -145,7 +145,8 @@ class SignInScreen extends StatelessWidget {
                   ),
                   TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/sign-up');
+                        Navigator.popUntil(context, (route) => route.isFirst);
+                        Navigator.pushReplacementNamed(context, '/sign-up');
                       },
                       child: Text(
                         "SignUp",
